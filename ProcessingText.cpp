@@ -72,7 +72,14 @@ void ProcessingText::_copyFirstPart()
 void ProcessingText::_copyLastPart()
 {
     *(_newStr+(_index)) = '*';
-    memcpy((_newStr + _index +1), (_cStr + _index +1), sizeof(char)*(_text.size() - _index));
+    if (_index)
+        memcpy((_newStr + _index +1),
+               (_cStr + _index +1),
+               sizeof(char)*(_text.size() - _index));
+    else
+        memcpy((_newStr + 1),
+               (_cStr),
+               sizeof(char)*(_text.size()));
 }
 
 void ProcessingText::_beginFromBeginning()

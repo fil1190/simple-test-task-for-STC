@@ -33,9 +33,7 @@ void MainWindow::_startThread()
 MainWindow::~MainWindow()
 {
     delete ui;
-//    delete button;
     _stopThread();
-//    delete textProcessing;
 }
 
 
